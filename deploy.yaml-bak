@@ -1,0 +1,20 @@
+version: "2.0"
+type: node-port
+services:
+  vm:
+    image: filswan/ubuntu-ssh-user:22.04
+    env:
+      - sshkey=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/aVnn6UU3To3/sRtjmwIfya08jCCTqOxltJTJoy+YW9UDaXXy8Sb2wPjpiTuFteb6KUM0EJEEz6QlI6D7xlzLJHpVzjGsW4k/CAd8RpiBLr8olO2A6gXgJ3cFUm6D2V+GG7pd3uK8tuQGAvhHIFVck68rIy2btv5pdK5w5a+kjFbOxgTd+Gy2FgH/QnL91/4lvZ0AviurAwX5wNVV2zPXLE4hK4UIMg3AKDgRYbj3PU6JBnow3nn0XcbvtBO+BOm3xtM9hsWzT6i00kmayhdVqYhHwujZIJmhcv9kGyc7p019X2O1dxAja7MlZ95cUMtibHCjAo7vkR8PVF6X/gDBhihTgSxd+Db62bb5LldqUVrUnpRxcyIBIa5Ihxw8xslwM396Hv1mIQ6bI5wkND9WoLbHLlMhGck9fLBEjZ0VcfcW28IRSYPmU6XttJeeUiSb1dNBgzrmfDXOfNEg3Q3wNyHqy8/z1lNVkPEcLjrMFL8uL0mGKYX2mCnLt02odFQ4zRKf22kfdOti9eS6aFVHelgmhoROocF9m0ZlmNl5/AA9YgMHtjij6LKQKMfUXQEWeSG1UOBp4YuQsu2xYOpP0Zsog0dizxHh8ufNK47rMn6fExvMF1SROH6zPF1nQn6DfzjkufWd9IS3LYsQPqxIN1p34racI8/lDd6fyIsN0Q== sonic@sonicdeMacBook-Pro.local
+      - username=swantouser
+    expose:
+        - port: 22
+        - port: 30002
+        - port: 30003
+        - port: 30004
+        - port: 30005
+        - port: 30006
+        - port: 30007
+deployment:
+  vm:
+    lagrange:
+      count: 1
